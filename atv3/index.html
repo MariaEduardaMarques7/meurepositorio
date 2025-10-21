@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulário de Anamnese - TecnoVida</title>
+</head>
+<body>
+  <h1>Formulário de Anamnese Digital - TecnoVida</h1>
+
+  <form action="#" method="post">
+
+    <fieldset>
+      <legend>Seção 1: Dados Pessoais</legend>
+
+      <label for="nome">Nome Completo:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="nascimento">Data de Nascimento:</label>
+      <input type="date" id="nascimento" name="nascimento" required>
+
+      <label for="genero">Gênero:</label>
+      <select id="genero" name="genero">
+        <option value="">Selecione</option>
+        <option value="feminino">Feminino</option>
+        <option value="masculino">Masculino</option>
+        <option value="outro">Outro</option>
+      </select>
+
+      <label for="cpf">CPF:</label>
+      <input type="number" id="cpf" name="cpf" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="email" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Seção 2: Histórico de Saúde</legend>
+
+      <label>Possui alguma doença crônica?</label>
+      <div class="radio-group">
+        <input type="radio" id="cronicaSim" name="doenca_cronica" value="sim">
+        <label for="cronicaSim">Sim</label>
+        <input type="radio" id="cronicaNao" name="doenca_cronica" value="nao">
+        <label for="cronicaNao">Não</label>
+      </div>
+
+      <label for="medicamentos">Quais medicamentos você utiliza regularmente?</label>
+      <textarea id="medicamentos" name="medicamentos" rows="3"></textarea>
+
+      <label>
+        <input type="checkbox" name="fuma" value="sim"> Você fuma?
+      </label>
+
+      <label for="altura">Altura (em cm):</label>
+      <input type="number" id="altura" name="altura" min="0">
+
+      <label for="peso">Peso (em kg):</label>
+      <input type="number" id="peso" name="peso" min="0">
+    </fieldset>
+
+    <fieldset>
+      <legend>Seção 3: Detalhes da Consulta</legend>
+
+      <label for="motivo">Qual é o principal motivo da sua consulta?</label>
+      <textarea id="motivo" name="motivo" rows="3"></textarea>
+
+      <label for="frequencia">Com que frequência você pratica exercícios físicos?</label>
+      <select id="frequencia" name="frequencia">
+        <option value="">Selecione</option>
+        <option value="diariamente">Diariamente</option>
+        <option value="semanalmente">Semanalmente</option>
+        <option value="raramente">Raramente</option>
+        <option value="nunca">Nunca</option>
+      </select>
+
+      <label for="ultima_consulta">Data da Última Consulta:</label>
+      <input type="date" id="ultima_consulta" name="ultima_consulta">
+
+      <label>Prefere ser contatado por:</label>
+      <div class="radio-group">
+        <input type="radio" id="telefone" name="contato" value="telefone">
+        <label for="telefone">Telefone</label>
+        <input type="radio" id="email_contato" name="contato" value="email">
+        <label for="email_contato">E-mail</label>
+      </div>
+
+      <button type="submit">Enviar Formulário</button>
+    </fieldset>
+
+  </form>
+</body>
+</html>
