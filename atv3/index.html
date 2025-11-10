@@ -1,93 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Anamnese - TecnoVida</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Anamnese Digital - TecnoVida</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          background-color: #f4f4f4;
+      }
+      form {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          max-width: 800px;
+          margin: 0 auto;
+      }
+      fieldset {
+          border: 1px solid #ccc;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 5px;
+      }
+      legend {
+          font-weight: bold;
+          color: #333;
+          padding: 0 10px;
+      }
+      label {
+          display: block;
+          margin-top: 10px;
+          font-weight: 500;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="date"],
+      textarea,
+      select {
+          width: 100%;
+          padding: 8px;
+          margin-top: 5px;
+          box-sizing: border-box;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+      }
+      .radio-group, .checkbox-group {
+          margin-top: 5px;
+      }
+      .radio-group label, .checkbox-group label {
+          display: inline-block;
+          margin-right: 15px;
+          font-weight: normal;
+      }
+      button[type="submit"] {
+          background-color: #ba8af1;
+          color: white;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 20px;
+      }
+      button[type="submit"]:hover {
+          background-color: #c28ff1;
+      }
+  </style>
 </head>
 <body>
-  <h1>Formulário de Anamnese Digital - TecnoVida</h1>
 
-  <form action="#" method="post">
+    <form action="#" method="POST">
+        <h1>Formulário de Anamnese Digital</h1>
+        <p>Clínica de Saúde e Bem-Estar TecnoVida</p>
 
-    <fieldset>
-      <legend>Seção 1: Dados Pessoais</legend>
+        <fieldset>
+            <legend>Seção 1: Dados Pessoais</legend>
 
-      <label for="nome">Nome Completo:</label>
-      <input type="text" id="nome" name="nome" required>
+            <label for="nome-completo">Nome Completo:</label>
+            <input type="text" id="nome-completo" name="nome_completo" required>
 
-      <label for="nascimento">Data de Nascimento:</label>
-      <input type="date" id="nascimento" name="nascimento" required>
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data_nascimento" required>
 
-      <label for="genero">Gênero:</label>
-      <select id="genero" name="genero">
-        <option value="">Selecione</option>
-        <option value="feminino">Feminino</option>
-        <option value="masculino">Masculino</option>
-        <option value="outro">Outro</option>
-      </select>
+            <label for="genero">Gênero:</label>
+            <select id="genero" name="genero" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+                <option value="nao_binario">Não Binário</option>
+                <option value="prefiro_nao_dizer">Prefiro Não Dizer</option>
+            </select>
 
-      <label for="cpf">CPF:</label>
-      <input type="number" id="cpf" name="cpf" required>
+            <label for="cpf">CPF (apenas números):</label>
+            <input type="number" id="cpf" name="cpf" min="10000000000" max="99999999999" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="email" required>
-    </fieldset>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
 
-    <fieldset>
-      <legend>Seção 2: Histórico de Saúde</legend>
+        <fieldset>
+            <legend>Seção 2: Histórico de Saúde</legend>
 
-      <label>Possui alguma doença crônica?</label>
-      <div class="radio-group">
-        <input type="radio" id="cronicaSim" name="doenca_cronica" value="sim">
-        <label for="cronicaSim">Sim</label>
-        <input type="radio" id="cronicaNao" name="doenca_cronica" value="nao">
-        <label for="cronicaNao">Não</label>
-      </div>
+            <label>Possui alguma doença crônica?</label>
+            <div class="radio-group">
+                <input type="radio" id="cronica-sim" name="doenca_cronica" value="Sim" required>
+                <label for="cronica-sim">Sim</label>
+                <input type="radio" id="cronica-nao" name="doenca_cronica" value="Não" required>
+                <label for="cronica-nao">Não</label>
+            </div>
 
-      <label for="medicamentos">Quais medicamentos você utiliza regularmente?</label>
-      <textarea id="medicamentos" name="medicamentos" rows="3"></textarea>
+            <label for="medicamentos">Quais medicamentos você utiliza regularmente?</label>
+            <textarea id="medicamentos" name="medicamentos_regulares" rows="3" placeholder="Se não tiver, escreva 'Nenhum'."></textarea>
 
-      <label>
-        <input type="checkbox" name="fuma" value="sim"> Você fuma?
-      </label>
+            <label>Você fuma?</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="fuma" name="fuma" value="Sim">
+                <label for="fuma">Sim</label>
+            </div>
+            <p style="font-size: small; color: #666;">* Marque a caixa se a resposta for "Sim".</p>
 
-      <label for="altura">Altura (em cm):</label>
-      <input type="number" id="altura" name="altura" min="0">
 
-      <label for="peso">Peso (em kg):</label>
-      <input type="number" id="peso" name="peso" min="0">
-    </fieldset>
+            <label for="altura">Altura (em cm):</label>
+            <input type="number" id="altura" name="altura_cm" min="50" max="300" required>
 
-    <fieldset>
-      <legend>Seção 3: Detalhes da Consulta</legend>
+            <label for="peso">Peso (em kg):</label>
+            <input type="number" id="peso" name="peso_kg" step="0.1" min="10" max="500" required>
+        </fieldset>
 
-      <label for="motivo">Qual é o principal motivo da sua consulta?</label>
-      <textarea id="motivo" name="motivo" rows="3"></textarea>
+        <fieldset>
+            <legend>Seção 3: Detalhes da Consulta</legend>
 
-      <label for="frequencia">Com que frequência você pratica exercícios físicos?</label>
-      <select id="frequencia" name="frequencia">
-        <option value="">Selecione</option>
-        <option value="diariamente">Diariamente</option>
-        <option value="semanalmente">Semanalmente</option>
-        <option value="raramente">Raramente</option>
-        <option value="nunca">Nunca</option>
-      </select>
+            <label for="motivo-consulta">Qual é o principal motivo da sua consulta?</label>
+            <textarea id="motivo-consulta" name="motivo_consulta" rows="4" required></textarea>
 
-      <label for="ultima_consulta">Data da Última Consulta:</label>
-      <input type="date" id="ultima_consulta" name="ultima_consulta">
+            <label for="frequencia-exercicios">Com que frequência você pratica exercícios físicos?</label>
+            <select id="frequencia-exercicios" name="frequencia_exercicios" required>
+                <option value="" disabled selected>Selecione a frequência</option>
+                <option value="diariamente">Diariamente</option>
+                <option value="semanalmente">Semanalmente</option>
+                <option value="raramente">Raramente</option>
+                <option value="nunca">Nunca</option>
+            </select>
 
-      <label>Prefere ser contatado por:</label>
-      <div class="radio-group">
-        <input type="radio" id="telefone" name="contato" value="telefone">
-        <label for="telefone">Telefone</label>
-        <input type="radio" id="email_contato" name="contato" value="email">
-        <label for="email_contato">E-mail</label>
-      </div>
+            <label for="data-ultima-consulta">Data da Última Consulta (aproximada):</label>
+            <input type="date" id="data-ultima-consulta" name="data_ultima_consulta_aproximada">
 
-      <button type="submit">Enviar Formulário</button>
-    </fieldset>
+            <label>Prefere ser contatado por:</label>
+            <div class="radio-group">
+                <input type="radio" id="contato-telefone" name="preferencia_contato" value="Telefone" required>
+                <label for="contato-telefone">Telefone</label>
+                <input type="radio" id="contato-email" name="preferencia_contato" value="E-mail" required>
+                <label for="contato-email">E-mail</label>
+            </div>
 
-  </form>
+            <button type="submit">Enviar Formulário de Anamnese</button>
+        </fieldset>
+    </form>
 </body>
 </html>
