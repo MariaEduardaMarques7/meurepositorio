@@ -1,0 +1,803 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+
+
+body {
+    background: #f1f1f1;
+
+}
+
+
+
+/* TOPO VERMELHO */
+
+.topo {
+    background: #d10b10;
+    padding: 10px 0;
+    border-bottom: 8px solid #000;
+
+}
+
+
+
+.topo-container {
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+
+
+.logo {
+    width: 80px;
+
+}
+
+
+
+/* BOTÕES DO TOPO */
+
+.topo-botoes {
+    display: flex;
+    gap: 15px;
+
+}
+
+
+
+.btn-topo {
+    background: #a10000;
+    padding: 12px 22px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+
+}
+
+
+
+/* ÍCONES À DIREITA */
+
+.topo-icons .icone {
+    height: 28px;
+    margin-left: 12px;
+
+}
+
+
+
+.topo-icons .pequena {
+    height: 20px;
+
+}
+
+
+
+/* MENU PRETO */
+
+.menu {
+    background: #000;
+    padding: 12px 0;
+
+}
+
+
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+
+}
+
+
+
+.menu ul li a {
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+
+
+/* SEÇÃO HERO (DUAS IMAGENS GRANDES) */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 460px;
+
+}
+
+
+
+.hero-item {
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+
+.hero-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+
+}
+
+
+
+/* TEXTO SOBRE AS IMAGENS */
+
+.info {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    right: 25px;
+    color: white;
+
+}
+
+
+
+.tag {
+    background: #d10b10;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 3px;
+
+}
+
+
+
+.info h2 {
+    margin-top: 10px;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.2;
+
+}
+
+
+
+.info p {
+    margin-top: 8px;
+    font-size: 15px;
+    max-width: 90%;
+
+}
+
+
+
+/* SEÇÃO DE NOTÍCIA PEQUENA */
+
+.news-item {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+
+}
+
+
+
+.news-item img {
+    width: 250px;
+    object-fit: cover;
+
+}
+
+
+
+.news-item .body {
+    padding: 20px;
+
+}
+
+
+
+.news-item h5 {
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
+.news-item p {
+    margin-top: 8px;
+    color: #444;
+}
+
+
+
+/* GRADE DE FOTOS */
+
+.photo-grid {
+    max-width: 1200px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+
+}
+
+
+
+.photo-grid img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 40px;
+    background: #000;
+    color: #fff;
+    padding: 30px 0;
+
+}
+
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+
+}
+
+
+
+.footer-text {
+    margin-top: 10px;
+    color: #ccc;
+    font-size: 14px;
+
+}
+
+
+.sponsors img {
+    width: 120px;
+    margin-right: 10px;
+
+}
+
+.footer-links li {
+    margin: 8px 0;
+
+}
+
+
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+
+
+
+/* ===========================
+
+   PRÓXIMO JOGO + CLASSIFICAÇÃO
+
+   =========================== */
+
+
+
+   .jogos-classificacao {
+    max-width: 1200px;
+    margin: 40px auto 80px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 60px;
+    align-items: start;
+    background: transparent;
+
+  }
+
+ 
+
+  /* ---- títulos com barra vermelha ---- */
+  .titulo-box {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    color: #111;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 18px; /* espaço para a barra */
+
+  }
+
+  .titulo-box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 4px;
+    height: 22px;
+    background: #d10b10; /* vermelho Flamengo */
+    border-radius: 2px;
+
+  }
+
+ 
+
+  /* ---- submenus (pequenas abas) ---- */
+
+  .submenus-jogo {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+
+  }
+
+  .submenus-jogo span {
+    font-size: 13px;
+    color: #999;
+    font-weight: 700;
+    text-transform: uppercase;
+
+  }
+
+  .submenus-jogo .ativo {
+    background: #d10b10;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    box-shadow: none;
+
+  }
+
+ 
+
+  /* ---- bloco do próximo jogo (coluna esquerda) ---- */
+  .proximo-jogo {
+    text-align: center;
+    padding: 20px 10px;
+
+  }
+
+  /* título da partida */
+  .jogo-titulo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.6px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    color: #111;
+
+  }
+
+ 
+
+  /* subtítulo campeonato */
+  .jogo-sub {
+    color: #777;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+
+ 
+
+  /* escudos */
+  .escudos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 22px 0;
+
+  }
+
+  .escudos img {
+    height: 92px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    padding: 6px;
+
+  }
+
+
+  /* local e horário em vermelho */
+  .local {
+    margin-top: 8px;
+    color: #c21a1a;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+
+  }
+
+ 
+
+  /* ---- coluna de classificação (direita) ---- */
+  .classificacao {
+    padding: 20px;
+
+  }
+
+  /* badge campeonato acima da tabela */
+  .badge-campeonato {
+    display: inline-block;
+    background: #d10b10;
+    color: #fff;
+    padding: 6px 12px;
+    font-weight: 800;
+    font-size: 13px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+
+  }
+
+  /* tabela estilo compacto */
+
+  .tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 15px;
+
+  }
+
+  .tabela tr {
+    height: 34px;
+
+  }
+
+ 
+
+  .tabela td {
+    vertical-align: middle;
+    padding: 6px 8px;
+    color: #222;
+
+  }
+
+  /* coluna 1: posição - fonte fina */
+  .tabela td:first-child {
+    width: 28px;
+    color: #111;
+    font-weight: 700;
+
+  }
+
+  /* coluna time: escudo + sigla */
+
+  .tabela td.time {
+    width: 120px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+
+  }
+
+
+  /* escudinho pequeno */
+  .tabela td.time img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    display: inline-block;
+
+  }
+
+
+  /* colunas numéricas (P, J, V) alinhamento à direita */
+  .tabela td:nth-child(3),
+  .tabela td:nth-child(4),
+  .tabela td:nth-child(5) {
+    text-align: right;
+    width: 46px;
+    font-weight: 800;
+    color: #111;
+
+  }
+
+  /* link ver tabela */
+
+  .tabela-link {
+    display: block;
+    margin-top: 16px;
+    text-align: right;
+    color: #d10b10;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+
+  }
+
+  /* pequenas legendas das colunas (P J V) */
+
+  .tabela thead td {
+    color: #777;
+    font-weight: 700;
+    font-size: 13px;
+
+  }
+
+  /* ===== responsividade ===== */
+
+  @media (max-width: 980px) {
+    .jogos-classificacao {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0 16px;
+
+    } 
+
+    .classificacao {
+      order: 2;
+
+    }
+
+    .proximo-jogo {
+      order: 1;
+
+    }
+
+    .tabela td:nth-child(3),
+    .tabela td:nth-child(4),
+    .tabela td:nth-child(5) {
+      text-align: left;
+
+    }
+
+    .escudos img {
+      height: 76px;
+    }
+
+  }
+
+  @media (max-width: 520px) {
+    .jogo-titulo {
+      font-size: 22px;
+
+    }
+
+    .local {
+      font-size: 13px;
+
+    }
+
+    .escudos img {
+      height: 60px;
+    }
+
+    .badge-campeonato,
+    .submenus-jogo span {
+      font-size: 12px;
+      padding: 4px 8px;
+
+    }
+
+  }
+
+ 
+
+
+
+  /* ===========================
+
+   NOTÍCIAS E SEÇÕES
+
+=========================== */
+
+.noticias-section {
+    max-width: 1200px;
+    margin: 50px auto 80px;
+    padding: 0 20px;
+
+  }
+
+ 
+
+  .noticia-bloco {
+   margin-bottom: 50px;
+
+  }
+
+ 
+
+  .noticia-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+
+  }
+
+ 
+
+  .ver-todos {
+    color: #d10b10;
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+
+  }
+
+ 
+
+  .card-grande {
+    position: relative;
+
+  }
+
+  .card-grande img {
+    width: 100%;
+    border-radius: 6px;
+
+  }
+
+  .categoria {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #d10b10;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: 900;
+    font-size: 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+
+  }
+
+  .card-titulo {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 900;
+    color: #111;
+
+  }
+
+
+  /* ===== 2 COLUNAS BASQUETE + FUT. FEM. ===== */
+
+  .duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+  }
+
+
+  /* ===== FLAMENGO TV GRID ===== */
+
+  .tv-grid {
+    margin: 60px 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+
+  }
+
+  .card-mini {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    cursor: pointer;
+
+  }
+
+
+  .card-mini img {
+    width: 120px;
+    height: 68px;
+    object-fit: cover;
+   border-radius: 6px;
+
+  }
+
+
+  .card-mini h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: #111;
+
+  }
+ 
+
+  /* ===== FOTOS ===== */
+
+  .fotos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+  }
+ 
+
+  .foto-card img {
+    width: 100%;
+    border-radius: 6px;
+
+  }
+
+  .foto-legenda {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+
+  }
+  /* ==== RESPONSIVIDADE ==== */
+
+
+  @media (max-width: 850px) {
+
+    .duas-colunas {
+      grid-template-columns: 1fr;
+    }
+
+    .tv-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .fotos-grid {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  @media (max-width: 500px) {
+    .card-mini img {
+      width: 90px;
+      height: 58px;
+    }
+
+  }
