@@ -107,7 +107,7 @@ body {
 .photo-card strong { display:block; font-weight:900; font-size:14px; }
 .photo-card span { display:block; color:#666; font-size:13px; margin-top:6px; }
 
-.site-footer { background:#111; color:#fff; padding:34px 0; margin-top:40px; }
+.site-footer { background:#d02a2a; color:#ffffff; padding:34px 0; margin-top:40px; }
 .footer-inner { display:flex; gap:30px; justify-content:space-between; align-items:flex-start; width:94%; max-width:1300px; margin:0 auto; }
 .footer-inner h4 { font-weight:900; margin-bottom:8px; }
 .sponsors img { height:36px; margin-right:8px; }
@@ -175,7 +175,7 @@ body {
   font-weight: 800;
   margin: 40px 0 20px;
   text-align: center;
-  color: #a40000;
+  color: #d92121;
 }
 
 .patro-grid {
