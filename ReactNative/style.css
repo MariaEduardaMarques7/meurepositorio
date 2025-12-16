@@ -10,7 +10,6 @@ body {
     color: #fff;
 }
 
-/* 🔹 Barra superior */
 .top-banner {
     background: #111827;
     text-align: center;
@@ -24,7 +23,6 @@ body {
     font-weight: bold;
 }
 
-/* 🔹 Navbar */
 .navbar {
     display: flex;
     align-items: center;
@@ -63,7 +61,6 @@ body {
     color: #fff;
 }
 
-/* 🔹 Hero */
 .hero {
     height: calc(100vh - 120px);
     display: flex;
@@ -90,7 +87,6 @@ body {
     margin-bottom: 30px;
 }
 
-/* 🔹 Botões */
 .hero-buttons {
     display: flex;
     gap: 15px;
