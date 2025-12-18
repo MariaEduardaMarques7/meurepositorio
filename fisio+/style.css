@@ -1,4 +1,3 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@ body {
   color: #333;
 }
 
-/* LOGO E MENU */
 .header {
   background: #fff;
   padding: 15px 40px;
@@ -43,7 +41,6 @@ body {
   border-radius: 8px;
 }
 
-/* LOGIN */
 .login {
   min-height: 100vh;
   display: flex;
@@ -93,7 +90,6 @@ body {
   background: #187bcd;
 }
 
-/* SECTIONS */
 .section {
   padding: 60px 40px;
   text-align: center;
@@ -111,7 +107,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
-/* CARD */
 .card {
   background: #fff;
   padding: 28px;
@@ -125,7 +120,6 @@ body {
   box-shadow: 0px 12px 30px rgba(0,0,0,0.1);
 }
 
-/* BOTÕES EM SEÇÕES */
 .section .form button {
   background: #2bb3b1;
 }
@@ -134,7 +128,6 @@ body {
   background: #249c9a;
 }
 
-/* RODAPÉ */
 .footer {
   background: #1e90ff;
   color: #fff;
@@ -144,7 +137,6 @@ body {
   font-size: 1rem;
 }
 
-/* RESPONSIVO */
 @media (max-width: 768px) {
   .section {
     padding: 40px 20px;
@@ -154,9 +146,8 @@ body {
   }
 }
 
-/* BANNER PRINCIPAL */
 .hero {
-  background-image: url('https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=1200');
+  background-image: url('bannerprincipal.webp');
   background-size: cover;
   background-position: center;
   padding: 160px 30px;
@@ -204,7 +195,6 @@ body {
   background: #249c9a;
 }
 
-/* SERVIÇOS */
 .servicos-section {
   background: #fff;
   padding-top: 60px;
