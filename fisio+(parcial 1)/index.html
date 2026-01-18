@@ -1,73 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fisio+ | Clínica de Fisioterapia</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clínica Fisio+</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-
-<!-- HEADER -->
-<header class="header">
-<div class="logo">Fisio<span>+</span></div>
-<nav>
-<a href="#home">Home</a>
-<a href="#clinica">Nossa Clínica</a>
-<a href="#servicos">Serviços</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
-
-
-<!-- HERO -->
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>Cuidar do seu corpo é investir em qualidade de vida</h1>
-<p>Na Fisio+, unimos tecnologia, acolhimento e profissionais qualificados para cuidar de você.</p>
-<a href="#login" class="btn-hero">Agende conosco</a>
-</div>
-</section>
-
-
-<!-- NOSSA CLÍNICA -->
-<section class="section" id="clinica">
-<h2>Nossa Clínica</h2>
-<p class="texto">
-A Fisio+ nasceu com o propósito de oferecer um atendimento humanizado, focado no bem-estar,
-recuperação e prevenção de lesões. Trabalhamos com um ambiente moderno, acolhedor e preparado
-para atender cada paciente de forma individualizada.
-</p>
-
-
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1580281657521-6f4d6a6c8c8f" alt="Clínica" />
-<img src="https://images.unsplash.com/photo-1576765607924-bbf7f06d88c3" alt="Atendimento" />
-<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07b" alt="Equipamentos" />
-</div>
-</section>
-
-
-<!-- SERVIÇOS -->
-<section class="section" id="servicos">
-<h2>Nossos Serviços</h2>
-
-
-<div class="grid">
-<div class="card">Fisioterapia Ortopédica</div>
-<div class="card">Fisioterapia Esportiva</div>
-<div class="card">Pilates Clínico</div>
-<div class="card">Reabilitação Pós-operatória</div>
-<div class="card">Fisioterapia Preventiva</div>
-<div class="card">Avaliação Funcional</div>
-</div>
-</section>
-
-
-<!-- LOGIN / AGENDAMENTO -->
 <section class="login" id="login">
-<h1>Agendamento</h1>
+  <h1>Fisio+</h1>
+
+  <form class="form" action="#dashboard">
+    <input type="email" placeholder="E-mail" required />
+    <input type="password" placeholder="Senha" required />
+    <button type="submit">Entrar</button>
+
+    <p style="text-align:center;">
+      Não tem conta? <a href="#clientes">Cadastre-se</a>
+    </p>
+  </form>
+</section>
 
 
+  <header class="header">
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#profissionais">Profissionais</a>
+      <a href="#agendamentos">Agendamentos</a>
+      <a href="#financeiro">Financeiro</a>
+      <a href="#mensalidades">Mensalidades</a>
+      <a href="#relatorios">Relatórios</a>
+      <a href="#configuracoes">Configurações</a>
+    </nav>
+  </header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Sua Saúde em Primeiro Lugar</h1>
+    <p>Transformando vidas com cuidado, atenção e tratamentos de excelência.</p>
+    <a href="#servicos" class="btn-hero">Conheça nossos serviços</a>
+  </div>
+</section>
+
+<section id="servicos" class="section servicos-section">
+  <h2>Nossos Serviços</h2>
+
+  <div class="grid servicos-grid">
+    <div class="servico-card">
+      <img src="fisioterapia_geral.webp" alt="Fisioterapia geral">
+      <h3>Fisioterapia Geral</h3>
+      <p>Atendimento personalizado para sua recuperação funcional e bem-estar.</p>
+    </div>
+
+    <div class="servico-card">
+      <img src="reabilitação_funcional.webp" alt="Reabilitação">
+      <h3>Reabilitação Funcional</h3>
+      <p>Programas específicos para reabilitar movimentos e reduzir dores.</p>
+    </div>
+
+    <div class="servico-card">
+      <img src="avaliação_postural.jpg" alt="Avaliação Postural">
+      <h3>Avaliação Postural</h3>
+      <p>Análise completa para correções e prevenção de lesões.</p>
+    </div>
+
+    <div class="servico-card">
+      <img src="pilates.webp" alt="Pilates Clínico">
+      <h3>Pilates Clínico</h3>
+      <p>Aprimore sua força, equilíbrio e postura com pilates especializado.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="dashboard" class="section">
+    <h2>Painel Principal</h2>
+    <div class="grid">
+      <div class="card">Agendamentos do dia</div>
+      <div class="card">Pacientes ativos</div>
+      <div class="card">Faturamento mensal</div>
+    </div>
+  </section>
+
+  <section id="clientes" class="section">
+  <h2>Cadastro de Clientes</h2>
+
+  <form class="form" action="#dashboard">
+    <input type="text" placeholder="Nome completo" required />
+    <input type="email" placeholder="E-mail" required />
+    <input type="tel" placeholder="Telefone" />
+    <button type="submit">Salvar</button>
+  </form>
+</section>
+
+
+  <section id="profissionais" class="section">
+    <h2>Cadastro de Profissionais</h2>
+    <form class="form">
+      <input type="text" placeholder="Nome" />
+      <input type="text" placeholder="Especialidade" />
+      <button>Salvar</button>
+    </form>
+  </section>
+
+  <section id="agendamentos" class="section">
+    <h2>Agendamentos e Check-in</h2>
+    <div class="card">Lista de atendimentos</div>
+  </section>
+
+  <section class="section">
+    <h2>Avaliações e Prontuários</h2>
+    <div class="card">Histórico clínico do paciente</div>
+  </section>
+
+  <section id="financeiro" class="section">
+    <h2>Controle Financeiro</h2>
+    <div class="grid">
+      <div class="card">Entradas</div>
+      <div class="card">Saídas</div>
+    </div>
+  </section>
+
+  <section id="mensalidades" class="section">
+    <h2>Mensalidades</h2>
+    <div class="card">Controle de pagamentos</div>
+  </section>
+
+  <section id="relatorios" class="section">
+    <h2>Relatórios</h2>
+    <div class="card">Relatórios gerenciais</div>
+  </section>
+
+  <section id="configuracoes" class="section">
+    <h2>Configurações</h2>
+    <div class="card">Preferências do sistema</div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 - Clínica Fisio+</p>
+  </footer>
+
+</body>
 </html>
