@@ -1,110 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Fisio+</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fisio+ | Clínica de Fisioterapia</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="login-body">
+<body>
 
-    <main class="login-card">
-        <div class="logo">Fisio+</div>
-        <h2>Bem-vindo</h2>
-        <p>Acesse o sistema da clínica</p>
-        <br>
-        
-        <form action="dashboard.html">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-            </div>
+<header>
+  <h1>Fisio+</h1>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Serviços</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+</header>
 
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <input type="password" id="password" name="password" placeholder="********" required>
-            </div>
+<section class="hero">
+  <h2>Cuidando do seu movimento e bem-estar</h2>
+  <p>Na Fisio+, oferecemos tratamentos humanizados e personalizados para melhorar sua qualidade de vida.</p>
+  <a href="#" class="btn">Agende sua consulta</a>
+</section>
 
-            <button type="submit" class="btn">Entrar</button>
-        </form>
-
-        <p style="margin-top: 1rem; font-size: 0.9rem;">
-            Ainda não tem conta? <a href="#" style="color: var(--primary-color);">Cadastre-se</a>
-        </p>
-    </main>
-
-    <div class="container">
-        <aside class="sidebar">
-            <div class="logo">Fisio+</div>
-            <nav class="nav-links">
-                <a href="dashboard.html" class="active">Dashboard</a>
-                <a href="#">Agendamentos</a>
-                <a href="#">Check-in</a>
-                <a href="#">Cad. Clientes</a>
-                <a href="#">Cad. Profissionais</a>
-                <a href="#">Avaliações e Prontuários</a>
-                <a href="#">Controle Financeiro</a>
-                <a href="#">Mensalidades</a>
-                <a href="#">Relatórios</a>
-                <a href="#">Configurações</a>
-            </nav>
-        </aside>
-
-        <header class="header">
-            <h3>Painel Principal</h3>
-            <div class="user-info">
-                <span>Olá, Dr. Silva</span> | <a href="index.html" style="color: red; text-decoration: none;">Sair</a>
-            </div>
-        </header>
-
-        <main class="main-content">
-            <h2>Resumo do Dia</h2>
-            
-            <section class="cards-grid">
-                <div class="card">
-                    <h3>Agendamentos Hoje</h3>
-                    <p style="font-size: 2rem; font-weight: bold; color: var(--primary-color);">12</p>
-                </div>
-                <div class="card">
-                    <h3>Check-ins Realizados</h3>
-                    <p style="font-size: 2rem; font-weight: bold; color: green;">8</p>
-                </div>
-                <div class="card">
-                    <h3>Financeiro (Mês)</h3>
-                    <p style="font-size: 2rem; font-weight: bold;">R$ 15k</p>
-                </div>
-                <div class="card">
-                    <h3>Avaliações Pendentes</h3>
-                    <p style="font-size: 2rem; font-weight: bold; color: orange;">3</p>
-                </div>
-            </section>
-
-            <section style="margin-top: 2rem;">
-                <h3>Próximos Pacientes</h3>
-                <table style="width: 100%; border-collapse: collapse; margin-top: 10px; background: white;">
-                    <thead>
-                        <tr style="background: #eee; text-align: left;">
-                            <th style="padding: 10px;">Horário</th>
-                            <th style="padding: 10px;">Paciente</th>
-                            <th style="padding: 10px;">Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">09:00</td>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">João da Silva</td>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">Confirmado</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">10:00</td>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">Maria Souza</td>
-                            <td style="padding: 10px; border-bottom: 1px solid #ddd;">Aguardando</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </main>
+<section class="section">
+  <h3>Nossos Serviços</h3>
+  <div class="services">
+    <div class="card">
+      <h4>Fisioterapia Ortopédica</h4>
+      <p>Tratamento para lesões musculares, articulares e recuperação pós-cirúrgica.</p>
     </div>
+    <div class="card">
+      <h4>Fisioterapia Neurológica</h4>
+      <p>Reabilitação para AVC, Parkinson e outras condições neurológicas.</p>
+    </div>
+    <div class="card">
+      <h4>Pilates Terapêutico</h4>
+      <p>Fortalecimento, postura e equilíbrio com acompanhamento profissional.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h3>Sobre a Fisio+</h3>
+
+  <div class="about">
+    <div class="about-images">
+      <img src="clinicafisio.jpg" alt="Clínica de Fisioterapia">
+      <img src="foto2clinica.png" alt="Atendimento em fisioterapia">
+      <img src="foto3clinica.jpg" alt="Exercícios terapêuticos">
+    </div>
+
+    <div class="about-text">
+      <p>
+        A Fisio+ é uma clínica especializada em promover saúde, movimento e qualidade de vida.
+        Contamos com profissionais capacitados, equipamentos modernos e um atendimento acolhedor,
+        sempre focado nas necessidades de cada paciente.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>📍 Rua das Flores, 123 – Centro</p>
+  <p>📞 (87) 1234-5678 | ✉️ contato@fisiomais.com</p>
+  <p>© 2025 Fisio+ - Todos os direitos reservados</p>
+</footer>
 
 </body>
 </html>

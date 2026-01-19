@@ -1,164 +1,249 @@
-/* --- Variáveis e Reset (Qualidade de Código) --- */
-:root {
-    --primary-color: #007bff; /* Azul profissional */
-    --secondary-color: #0056b3;
-    --bg-color: #f4f6f9;
-    --text-color: #333;
-    --sidebar-width: 250px;
-    --white: #ffffff;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* =====================
+   VARIÁVEIS
+===================== */
+:root{
+  --primary: #1e90ff;
+  --primary-dark: #171053;
+  --bg-light: #f4f8fb;
+  --text-dark: #2f2f2f;
+  --text-muted: #666;
+  --radius-soft: 18px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* =====================
+   RESET
+===================== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+body{
+  background:#f4f8fb;
+  color:#333;
+  line-height:1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* --- Utilitários de Layout (Flexbox & Grid) --- */
-.container {
-    display: grid; /* Requisito: Grid CSS */
-    grid-template-columns: var(--sidebar-width) 1fr;
-    grid-template-rows: 60px 1fr;
-    grid-template-areas: 
-        "sidebar header"
-        "sidebar main";
-    height: 100vh;
+/* =====================
+   HEADER
+===================== */
+header{
+  background:rgba(23, 16, 83, 0.85);
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* --- Tela de Login (Centralizada com Flexbox) --- */
-.login-body {
-    display: flex; /* Requisito: Flexbox */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+header h1{
+  color:#fff;
+  font-size:28px;
 }
 
-.login-card {
-    background: var(--white);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
+nav a{
+  color:#fff;
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
 }
 
-.form-group {
-    margin-bottom: 1rem;
-    text-align: left;
+nav a::after{
+  content:'';
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  width:0;
+  height:2px;
+  background:#fff;
+  transition:0.3s;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+nav a:hover::after{
+  width:100%;
 }
 
-.btn {
-    width: 100%;
-    padding: 10px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+/* =====================
+   HERO
+===================== */
+.hero{
+  background:linear-gradient(rgba(23, 16, 83, 0.85), rgba(30,144,255,0.85)),
+  url('https://images.unsplash.com/photo-1580281657527-47f249e8f7a3');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  padding:80px 40px;
+  text-align:center;
+  border-bottom-left-radius:40px;
+  border-bottom-right-radius:40px;
 }
 
-.btn:hover {
-    background-color: var(--secondary-color);
+.hero h2{
+  font-size:42px;
+  margin-bottom:20px;
+  letter-spacing:-0.5px;
 }
 
-/* --- Sidebar (Barra Lateral) --- */
-.sidebar {
-    grid-area: sidebar;
-    background-color: var(--white);
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
+.hero p{
+  font-size:18px;
+  max-width:700px;
+  margin:0 auto 30px;
+  color:#f0f4ff;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-    margin-bottom: 2rem;
-    text-align: center;
+/* =====================
+   BOTÃO
+===================== */
+.btn{
+  background:#fff;
+  color:#1e90ff;
+  padding:15px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
 }
 
-.nav-links a {
-    display: block;
-    padding: 10px;
-    color: var(--text-color);
-    text-decoration: none;
-    margin-bottom: 5px;
-    border-radius: 4px;
+.btn:hover{
+  background:#e6f0ff;
+  transform:translateY(-2px);
 }
 
-.nav-links a:hover, .nav-links a.active {
-    background-color: var(--primary-color);
-    color: var(--white);
+/* =====================
+   SEÇÕES
+===================== */
+.section{
+  padding:60px 40px;
+  max-width:1100px;
+  margin:auto;
 }
 
-/* --- Header --- */
-.header {
-    grid-area: header;
-    background-color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+.section h3{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:40px;
+  color:#1e90ff;
 }
 
-/* --- Conteúdo Principal --- */
-.main-content {
-    grid-area: main;
-    padding: 2rem;
-    overflow-y: auto;
+/* =====================
+   SERVIÇOS
+===================== */
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+  gap:30px;
 }
 
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo automático */
-    gap: 1.5rem;
-    margin-top: 1rem;
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  text-align:center;
+  transition:0.3s;
+  border-top:4px solid var(--primary);
 }
 
-.card {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
+.card:hover{
+  transform:translateY(-5px);
 }
 
-/* --- Responsividade (Requisito Mobile) --- */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 60px 1fr;
-        grid-template-areas: 
-            "header"
-            "main";
-    }
+.card h4{
+  margin-bottom:15px;
+  font-size:20px;
+  color:var(--primary-dark);
+}
 
-    .sidebar {
-        display: none; /* Em um app real, faríamos um menu hambúrguer */
-    }
+.card p{
+  font-size:15px;
+  line-height:1.6;
+}
 
-    /* Ajuste para mobile se quiser mostrar o menu no topo */
-    .header {
-        justify-content: center;
-    }
+/* =====================
+   SOBRE
+===================== */
+.about{
+  display:flex;
+  gap:40px;
+  align-items:center;
+  flex-wrap:wrap;
+  background:#fff;
+  padding:40px;
+  border-radius:var(--radius-soft);
+  box-shadow:var(--shadow-soft);
+}
+
+.about-images{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:15px;
+}
+
+.about-images img{
+  width:100%;
+  border-radius:15px;
+  object-fit:cover;
+  transition:transform 0.3s, box-shadow 0.3s;
+}
+
+.about-images img:hover{
+  transform:scale(1.03);
+  box-shadow:var(--shadow-soft);
+}
+
+.about-text{
+  margin-top:30px;
+}
+
+.about-text p{
+  font-size:16px;
+  line-height:1.7;
+  color:var(--text-muted);
+}
+
+/* =====================
+   FOOTER
+===================== */
+footer{
+  background:rgba(23, 16, 83, 0.85);
+  color:#fff;
+  padding:30px 40px;
+  text-align:center;
+  margin-top:60px;
+  font-size:14px;
+}
+
+footer p{
+  margin-bottom:10px;
+  opacity:0.9;
+}
+
+/* =====================
+   RESPONSIVO
+===================== */
+@media(max-width:600px){
+  header{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .hero h2{
+    font-size:30px;
+  }
+}
+
+@media(max-width:900px){
+  .about{
+    padding:25px;
+  }
+
+  .about-images{
+    grid-template-columns:1fr;
+  }
 }
