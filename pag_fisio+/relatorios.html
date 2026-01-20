@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios | Fisio+</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   
+    <style>
+        :root {
+            --primary-color: #7d5fff;    
+            --primary-dark: #6741d9;    
+            --primary-light: #efebff;    
+            --text-color: #2d3436;
+            --bg-light: #f8f7ff;
+            --white: #ffffff;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+        body {
+            font-family: var(--font-main);
+            background: linear-gradient(rgba(125, 95, 255, 0.15), rgba(125, 95, 255, 0.25)),
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+
+        /* Card Principal Glassmorphism */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 950px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+
+        header { text-align: center; margin-bottom: 35px; }
+       
+        .logo-auth {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #4834d4;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 5px;
+            letter-spacing: -1px;
+        }
+        .logo-auth span { color: var(--primary-color); }
+
+
+        h1 { font-size: 1.8rem; color: var(--text-color); margin-bottom: 5px; }
+        .periodo { color: var(--primary-dark); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+
+
+        /* Resumo Executivo */
+        .summary-box {
+            background: var(--primary-light);
+            padding: 25px;
+            border-radius: 18px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .summary-box i { font-size: 2.5rem; color: var(--primary-color); }
+        .summary-box p { font-size: 1.05rem; line-height: 1.6; color: #444; }
+        .summary-box strong { color: var(--primary-dark); }
+
+
+        /* Tabelas */
+        section h2 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-color); display: flex; align-items: center; gap: 10px; }
+       
+        .table-responsive { overflow-x: auto; margin-bottom: 35px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; background: white; }
+       
+        th {
+            text-align: left;
+            background: #f1f2f6;
+            padding: 15px;
+            color: var(--primary-dark);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+
+        td { padding: 15px; border-bottom: 1px solid #f1f2f6; font-size: 0.95rem; }
+        tr:hover { background-color: rgba(125, 95, 255, 0.03); }
+
+
+        /* Recomendações */
+        .recommendations {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .recommendations li {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+        }
+        .recommendations li i { color: var(--primary-color); font-size: 1.1rem; }
+
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+
+        .back-link {
+            color: var(--primary-color);
+            font-weight: 800;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+        .back-link:hover { color: var(--primary-dark); transform: translateX(-5px); }
+
+
+        @media (max-width: 768px) {
+            .recommendations { grid-template-columns: 1fr; }
+            .container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <header>
+        <a href="telainicial.html" class="logo-auth">Fisio<span>+</span></a>
+        <h1>Relatório de Desempenho Clínico</h1>
+        <p class="periodo"><i class="fa-solid fa-calendar-check"></i> Período: Janeiro de 2026</p>
+    </header>
+
+
+    <section>
+        <h2><i class="fa-solid fa-chart-line"></i> Resumo Executivo</h2>
+        <div class="summary-box">
+            <i class="fa-solid fa-award"></i>
+            <p>
+                Neste mês, a clínica alcançou uma receita total de <strong>R$ 450.000,00</strong>.
+                Isso representa um crescimento sólido de <strong>15%</strong> em comparação ao mês de dezembro, impulsionado pelo aumento na procura por atendimentos especializados.
+            </p>
+        </div>
+    </section>
+
+
+    <section>
+        <h2><i class="fa-solid fa-list-check"></i> Dados por Serviço</h2>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Serviço / Procedimento</th>
+                        <th>Atendimentos</th>
+                        <th>Receita (R$)</th>
+                        <th>% do Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Fisioterapia Motora</strong></td>
+                        <td>1.200</td>
+                        <td>180.000,00</td>
+                        <td>40%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pilates Clínico</strong></td>
+                        <td>850</td>
+                        <td>127.500,00</td>
+                        <td>28%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quiropraxia</strong></td>
+                        <td>600</td>
+                        <td>90.000,00</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Outros Procedimentos</strong></td>
+                        <td>400</td>
+                        <td>52.500,00</td>
+                        <td>12%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+
+    <section>
+        <h2><i class="fa-solid fa-lightbulb"></i> Recomendações Estratégicas</h2>
+        <ul class="recommendations">
+            <li><i class="fa-solid fa-circle-check"></i> Expandir horários para Fisioterapia Motora (Alta Demanda).</li>
+            <li><i class="fa-solid fa-circle-check"></i> Criar pacotes promocionais para Quiropraxia.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Oferecer avaliações gratuitas de Pilates para novos pacientes.</li>
+            <li><i class="fa-solid fa-circle-check"></i> Revisar custos de materiais para procedimentos secundários.</li>
+        </ul>
+    </section>
+
+
+    <footer>
+        <p><i class="fa-solid fa-clock"></i> Gerado em 07 de janeiro de 2026 às 14:30</p>
+        <a href="telainicial.html" class="back-link">
+            <i class="fa-solid fa-arrow-left"></i> Voltar ao Painel
+        </a>
+    </footer>
+</div>
+
+
+</body>
+</html>
