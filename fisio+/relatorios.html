@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios | Fisio+</title>
+   
+    <link rel="stylesheet" href="relatorios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="telainicial.html" class="logo-auth">
+                <img src="logor.png" alt="Fisio+">
+            </a>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+       
+        <nav class="sidebar-menu">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html"><i class="fa-solid fa-circle-check"></i> Check-in</a>
+            <a href="prontuarios.html"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html" class="active"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a>
+            <a href="#" onclick="sairDaConta()" class="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="left-header-group">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Fisio+">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+       
+        <div class="card">
+           
+            <div class="report-header">
+                <div class="report-title">
+                    <h2><i class="fa-solid fa-chart-column"></i> Relatório de Desempenho</h2>
+                    <p class="report-period"><i class="fa-solid fa-calendar-check"></i> Janeiro de 2026</p>
+                </div>
+                <button class="btn-print" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i> Imprimir / PDF
+                </button>
+            </div>
+
+
+            <section>
+                <h3>Resumo Executivo</h3>
+                <div class="summary-box">
+                    <i class="fa-solid fa-award"></i>
+                    <p>
+                        Neste mês, a clínica alcançou uma receita total de <strong>R$ 450.000,00</strong>.
+                        Isso representa um crescimento sólido de <strong>15%</strong> em comparação ao mês de dezembro, impulsionado pelo aumento na procura por atendimentos especializados.
+                    </p>
+                </div>
+            </section>
+
+
+            <section>
+                <h3><i class="fa-solid fa-list-check"></i> Detalhamento por Serviço</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Serviço / Procedimento</th>
+                                <th>Atendimentos</th>
+                                <th>Receita (R$)</th>
+                                <th>% do Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Fisioterapia Motora</strong></td>
+                                <td>1.200</td>
+                                <td>180.000,00</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Pilates Clínico</strong></td>
+                                <td>850</td>
+                                <td>127.500,00</td>
+                                <td>28%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Quiropraxia</strong></td>
+                                <td>600</td>
+                                <td>90.000,00</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Outros Procedimentos</strong></td>
+                                <td>400</td>
+                                <td>52.500,00</td>
+                                <td>12%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+            <section>
+                <h3><i class="fa-solid fa-lightbulb"></i> Recomendações Estratégicas</h3>
+                <ul class="recommendations-grid">
+                    <li><i class="fa-solid fa-circle-check"></i> Expandir horários para Fisioterapia Motora (Alta Demanda).</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Criar pacotes promocionais para Quiropraxia.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Oferecer avaliações gratuitas de Pilates para novos pacientes.</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Revisar custos de materiais para procedimentos secundários.</li>
+                </ul>
+            </section>
+
+
+            <div class="report-footer">
+                <p><i class="fa-solid fa-clock"></i> Gerado em: <span id="data-geracao"></span></p>
+                <p>Fisio+ Sistema de Gestão</p>
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+    <script>
+        // Data de geração automática
+        const now = new Date();
+        document.getElementById('data-geracao').innerText = now.toLocaleDateString('pt-BR') + ' às ' + now.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'});
+
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('aberto');
+            overlay.style.display = sidebar.classList.contains('aberto') ? 'block' : 'none';
+        }
+
+
+        function sairDaConta() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

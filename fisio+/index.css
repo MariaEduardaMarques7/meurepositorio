@@ -1,20 +1,15 @@
-/* Configurações de Cores e Fontes */
 :root {
-    --primary-color: #7d5fff;
-    --primary-dark: #6741d9;
-    --primary-light: #efebff;
-    --text-color: #2d3436;
-    --bg-light: #f8f7ff;
+    --primary-color: #7d5fff;    /* Roxo principal vibrante */
+    --primary-dark: #6741d9;     /* Roxo mais escuro para hover */
+    --primary-light: #efebff;    /* Roxo clarinho para fundos */
+    --text-color: #2d3436;       /* Cinza escuro para leitura */
+    --bg-light: #f8f7ff;         /* Fundo da página levemente roxo */
     --white: #ffffff;
     --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 
 body {
@@ -28,18 +23,10 @@ body {
 }
 
 
-a {
-    text-decoration: none;
-    transition: 0.3s;
-}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
 
 
-.auth-container {
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-}
+.auth-container { width: 100%; padding: 20px; display: flex; justify-content: center; }
 
 
 .auth-card {
@@ -52,12 +39,10 @@ a {
 }
 
 
-.auth-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+.auth-header { text-align: center; margin-bottom: 30px; }
 
 
+/* Estilo para a Imagem do Logo */
 .logo-auth {
     display: block;
     margin-bottom: 15px;
@@ -66,32 +51,18 @@ a {
 
 
 .logo-auth img {
-    max-width: 180px;
-    height: auto;
+    max-width: 180px; /* Define a largura máxima do logo */
+    height: auto;     /* Mantém a proporção correta */
     display: inline-block;
 }
 
 
-.auth-header h2 {
-    font-size: 1.5rem;
-    margin-bottom: 8px;
-    color: #2d3436;
-}
+.auth-header h2 { font-size: 1.5rem; margin-bottom: 8px; color: #2d3436; }
+.auth-header p { color: #888; font-size: 0.9rem; }
 
 
-.auth-header p {
-    color: #888;
-    font-size: 0.9rem;
-}
-
-
-/* Campos de Digitação */
-.input-group {
-    margin-bottom: 18px;
-    text-align: left;
-}
-
-
+/* Grupos de Input */
+.input-group { margin-bottom: 18px; text-align: left; }
 .input-group label {
     display: block;
     margin-bottom: 8px;
@@ -99,9 +70,8 @@ a {
     color: #555;
     font-size: 0.85rem;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
-
-
 .input-group input {
     width: 100%;
     padding: 14px;
@@ -114,6 +84,7 @@ a {
 }
 
 
+/* Efeito ao clicar no input */
 .input-group input:focus {
     border-color: var(--primary-color);
     background-color: #fff;
@@ -121,7 +92,7 @@ a {
 }
 
 
-/* Botão de Cadastrar */
+/* Botão Principal */
 .btn-primary {
     background-color: var(--primary-color);
     color: white;
@@ -145,21 +116,10 @@ a {
 }
 
 
-/* Rodapé do Card */
-.auth-footer {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 0.95rem;
-    color: #666;
-}
+.btn-primary:active { transform: translateY(0); }
 
 
-.auth-footer a {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-
-.auth-footer a:hover {
-    text-decoration: underline;
-}
+/* Rodapé */
+.auth-footer { margin-top: 25px; text-align: center; font-size: 0.95rem; color: #666; }
+.auth-footer a { color: var(--primary-color); font-weight: bold; }
+.auth-footer a:hover { color: var(--primary-dark); text-decoration: underline; }

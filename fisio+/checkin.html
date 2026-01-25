@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-in | Fisio+</title>
+   
+    <link rel="stylesheet" href="checkin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="telainicial.html" class="logo-auth">
+                <img src="logor.png" alt="Fisio+">
+            </a>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+       
+        <nav class="sidebar-menu">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html" class="active"><i class="fa-solid fa-circle-check"></i> Check-in</a>
+            <a href="prontuarios.html"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a>
+            <a href="#" onclick="sairDaConta()" class="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="left-header-group">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Fisio+">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+       
+        <div class="card">
+            <div class="page-header-title">
+                <h2><i class="fa-solid fa-clipboard-check"></i> Check-in de Pacientes</h2>
+                <p>Controle de presença para os atendimentos de hoje.</p>
+            </div>
+
+
+            <div class="search-container">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" class="search-box" id="searchInput" placeholder="Buscar paciente pelo nome...">
+            </div>
+
+
+            <div class="table-responsive">
+                <table id="tabela-checkin">
+                    <thead>
+                        <tr>
+                            <th>Hora</th>
+                            <th>Paciente</th>
+                            <th>Profissional</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>09:00</strong></td>
+                            <td class="nome-paciente">Carlos Alberto</td>
+                            <td>Dra. Ana Paula</td>
+                            <td><span class="status-badge badge-pending"><i class="fa-solid fa-spinner"></i> Aguardando</span></td>
+                            <td>
+                                <button class="btn-checkin" onclick="confirmar(this)">
+                                    <i class="fa-solid fa-check"></i> Confirmar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>10:30</strong></td>
+                            <td class="nome-paciente">Maria Souza</td>
+                            <td>Dr. Ricardo</td>
+                            <td><span class="status-badge badge-pending"><i class="fa-solid fa-spinner"></i> Aguardando</span></td>
+                            <td>
+                                <button class="btn-checkin" onclick="confirmar(this)">
+                                    <i class="fa-solid fa-check"></i> Confirmar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>14:00</strong></td>
+                            <td class="nome-paciente">Roberto Ferreira</td>
+                            <td>Dra. Ana Paula</td>
+                            <td><span class="status-badge badge-pending"><i class="fa-solid fa-spinner"></i> Aguardando</span></td>
+                            <td>
+                                <button class="btn-checkin" onclick="confirmar(this)">
+                                    <i class="fa-solid fa-check"></i> Confirmar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </main>
+
+
+    <script>
+        // Lógica do Menu
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('aberto');
+            overlay.style.display = sidebar.classList.contains('aberto') ? 'block' : 'none';
+        }
+
+
+        function sairDaConta() {
+            window.location.href = "login.html";
+        }
+
+
+        // Lógica de Confirmação (Visual)
+        function confirmar(btn) {
+            // Alterar o botão
+            btn.innerHTML = '<i class="fa-solid fa-check-double"></i> Presente';
+            btn.style.background = "#2ecc71"; // Verde sucesso
+            btn.disabled = true;
+
+
+            // Alterar a badge de status na mesma linha
+            let row = btn.closest('tr');
+            let badge = row.querySelector('.status-badge');
+           
+            badge.className = "status-badge badge-success";
+            badge.innerHTML = '<i class="fa-solid fa-check"></i> Confirmado';
+           
+            // Efeito visual na linha (opcional)
+            row.style.background = "#f8fff9";
+        }
+
+
+        // Lógica de Filtro/Busca
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let value = this.value.toLowerCase();
+            let rows = document.querySelectorAll('#tabela-checkin tbody tr');
+           
+            rows.forEach(row => {
+                let name = row.querySelector('.nome-paciente').innerText.toLowerCase();
+                row.style.display = name.includes(value) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

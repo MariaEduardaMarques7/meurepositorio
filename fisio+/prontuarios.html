@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuários | Fisio+</title>
+   
+    <link rel="stylesheet" href="prontuarios.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="telainicial.html" class="logo-auth">
+                <img src="logor.png" alt="Fisio+">
+            </a>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+       
+        <nav class="sidebar-menu">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html"><i class="fa-solid fa-circle-check"></i> Check-in</a>
+            <a href="prontuarios.html" class="active"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a>
+            <a href="#" onclick="sairDaConta()" class="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="left-header-group">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Fisio+">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+       
+        <section class="card">
+            <div class="page-header-title">
+                <h2><i class="fa-solid fa-clipboard-user"></i> Evolução Clínica</h2>
+                <p>Registre o progresso do paciente e as condutas aplicadas na sessão de hoje.</p>
+            </div>
+
+
+            <form>
+                <div class="form-group">
+                    <label><i class="fa-solid fa-user"></i> Nome do Paciente</label>
+                    <input type="text" id="nome-paciente" placeholder="Busque ou digite o nome completo">
+                </div>
+
+
+                <div class="grid-half">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-calendar-day"></i> Data do Atendimento</label>
+                        <input type="date" id="data-atendimento">
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-user-doctor"></i> Profissional Responsável</label>
+                        <select id="profissional-nome">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option>Dra. Ana Paula</option>
+                            <option>Dr. Ricardo</option>
+                            <option>Dra. Mariana</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label><i class="fa-solid fa-notes-medical"></i> Descrição do Quadro e Conduta</label>
+                    <textarea id="texto-prontuario" placeholder="Relate aqui a evolução motora, queixas do paciente, testes realizados, exercícios aplicados e orientações passadas..."></textarea>
+                </div>
+
+
+                <div class="footer-actions">
+                    <a href="telainicial.html" class="btn-secondary">
+                        <i class="fa-solid fa-xmark"></i> Cancelar
+                    </a>
+                    <button type="button" class="btn-primary" onclick="salvarProntuario()">
+                        <i class="fa-solid fa-save"></i> Salvar Evolução
+                    </button>
+                </div>
+            </form>
+        </section>
+
+
+    </main>
+
+
+    <script>
+        // Data atual automática
+        document.getElementById('data-atendimento').valueAsDate = new Date();
+
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('aberto');
+            overlay.style.display = sidebar.classList.contains('aberto') ? 'block' : 'none';
+        }
+
+
+        function sairDaConta() {
+            window.location.href = "login.html";
+        }
+
+
+        function salvarProntuario() {
+            const paciente = document.getElementById('nome-paciente').value;
+            const texto = document.getElementById('texto-prontuario').value;
+
+
+            if(!paciente || !texto) {
+                alert("⚠️ Por favor, preencha o nome do paciente e a descrição da evolução.");
+                return;
+            }
+           
+            alert("✅ Prontuário de " + paciente + " salvo com sucesso!");
+            window.location.href = "telainicial.html";
+        }
+    </script>
+</body>
+</html>

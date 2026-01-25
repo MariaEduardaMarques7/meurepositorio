@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Cliente | Fisio+</title>
+   
+    <link rel="stylesheet" href="cadastrocliente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="telainicial.html" class="logo-auth">
+                <img src="logor.png" alt="Fisio+">
+            </a>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+       
+        <nav class="sidebar-menu">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html" class="active"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html"><i class="fa-solid fa-circle-check"></i> Check-in</a>
+            <a href="prontuarios.html"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a>
+            <a href="#" onclick="sairDaConta()" class="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="left-header-group">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Fisio+">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+       
+        <section class="card form-card">
+            <h2><i class="fa-solid fa-user-plus"></i> Novo Cadastro de Cliente</h2>
+           
+            <form>
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input type="text" placeholder="Digite o nome do paciente">
+                </div>
+
+
+                <div class="grid-half">
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" placeholder="000.000.000-00">
+                    </div>
+                    <div class="form-group">
+                        <label>Data de Nascimento</label>
+                        <input type="date">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Telefone / WhatsApp</label>
+                    <input type="text" placeholder="(00) 90000-0000">
+                </div>
+
+
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input type="email" placeholder="email@exemplo.com">
+                </div>
+
+
+                <button type="button" class="btn-primary" onclick="alert('Cadastro enviado (apenas visual)!')">
+                    <i class="fa-solid fa-check"></i> Salvar Cliente
+                </button>
+            </form>
+        </section>
+
+
+    </main>
+
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('aberto');
+           
+            if (sidebar.classList.contains('aberto')) {
+                overlay.style.display = 'block';
+            } else {
+                overlay.style.display = 'none';
+            }
+        }
+
+
+        function sairDaConta() {
+            window.location.href = "login.html";
+        }
+    </script>
+
+
+</body>
+</html>

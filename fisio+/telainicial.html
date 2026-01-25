@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisio+ | Saúde e Bem-estar</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   
+    <link rel="stylesheet" href="telainicial.css">
+</head>
+<body>
+
+
+    <div id="overlay-menu" class="overlay-menu" onclick="toggleMenu()"></div>
+   
+    <aside id="menu-lateral" class="menu-lateral">
+        <div class="menu-header">
+            <h3>Navegação</h3>
+            <button class="close-btn" onclick="toggleMenu()"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <nav class="menu-links">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html"><i class="fa-solid fa-check-to-slot"></i> Check-in</a>
+            <a href="prontuarios.html"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-sliders"></i> Configurações</a>
+            <hr style="border: 0; border-top: 1px solid #eee;">
+            <a href="#" onclick="sairDaConta()" style="color: #ff4757;"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header>
+        <div class="container header-content">
+           
+            <div style="display: flex; align-items: center;">
+                <i class="fa-solid fa-bars btn-menu-toggle" onclick="toggleMenu()"></i>
+                <a href="telainicial.html" class="logo-img">
+                    <img src="logor.png" alt="Logo Fisio+">
+                </a>
+            </div>
+           
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="telainicial.html">Início</a></li>
+                    <li id="menu-login"><a href="login.html" class="btn-outline">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="hero" id="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <h1 id="titulo-hero">Sua Vida em Movimento,<br>Livre de Dores.</h1>
+                <p id="subtitulo-hero">Combinamos ciência e acolhimento para reabilitar seu corpo e transformar sua qualidade de vida.</p>
+                <div id="cta-container">
+                    <a href="login.html" class="btn-cta">Agendar Avaliação</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="conteudo-publico">
+        <div class="container">
+           
+            <div class="section-row">
+                <div class="text-col">
+                    <h2>Método Exclusivo de Tratamento</h2>
+                    <p>Na Fisio+, não tratamos apenas os sintomas, buscamos a raiz do problema. Nossa abordagem combina terapia manual avançada com tecnologia de ponta para acelerar sua recuperação.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-check"></i> Avaliação biomecânica detalhada</li>
+                        <li><i class="fa-solid fa-check"></i> Planos de tratamento personalizados</li>
+                        <li><i class="fa-solid fa-check"></i> Acompanhamento contínuo da evolução</li>
+                    </ul>
+                </div>
+                <div class="img-col">
+                    <img src="pilates-e-fisioterapia-combinacao-poderosa-para-a-sua-saude.jpg.webp" alt="Fisioterapeuta atendendo paciente">
+                </div>
+            </div>
+
+
+            <div class="section-row reverse">
+                <div class="text-col">
+                    <h2>Nossos Serviços Especializados</h2>
+                    <p>Contamos com uma equipe multidisciplinar pronta para atender diversas necessidades, desde a reabilitação pós-cirúrgica até a performance esportiva.</p>
+                    <ul class="check-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Fisioterapia Ortopédica e Desportiva</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Pilates Clínico e RPG</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Osteopatia e Quiropraxia</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Recovery para Atletas</li>
+                    </ul>
+                </div>
+                <div class="img-col">
+                    <img src="Pilates-Corts-scaled.jpg" alt="Exercícios de reabilitação">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <section id="painel-gestao">
+        <div class="container">
+            <div class="painel-header">
+                <h2>Painel Administrativo</h2>
+                <p>Gerencie sua clínica de forma eficiente.</p>
+            </div>
+           
+            <div class="painel-grid">
+                <a href="cadastrocliente.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-users painel-icon"></i></div>
+                    <div class="painel-title">Clientes</div>
+                </a>
+               
+                <a href="cadastroprofissional.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-user-doctor painel-icon"></i></div>
+                    <div class="painel-title">Profissionais</div>
+                </a>
+
+
+                <a href="agendamentos.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-calendar-days painel-icon"></i></div>
+                    <div class="painel-title">Agenda</div>
+                </a>
+
+
+                <a href="checkin.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-check-to-slot painel-icon"></i></div>
+                    <div class="painel-title">Check-in</div>
+                </a>
+
+
+                <a href="prontuarios.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-file-medical painel-icon"></i></div>
+                    <div class="painel-title">Prontuários</div>
+                </a>
+
+
+                <a href="financeiro.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-money-bill-trend-up painel-icon"></i></div>
+                    <div class="painel-title">Financeiro</div>
+                </a>
+
+
+                <a href="relatorios.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-chart-pie painel-icon"></i></div>
+                    <div class="painel-title">Relatórios</div>
+                </a>
+
+
+                <a href="configuracoes.html" class="painel-card">
+                    <div class="painel-icon-wrapper"><i class="fa-solid fa-sliders painel-icon"></i></div>
+                    <div class="painel-title">Configurações</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fisio+ | Excelência em Reabilitação Física.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        // Função para abrir/fechar o menu
+        function toggleMenu() {
+            var menu = document.getElementById('menu-lateral');
+            var overlay = document.getElementById('overlay-menu');
+           
+            if (menu.classList.contains('aberto')) {
+                menu.classList.remove('aberto');
+                overlay.style.display = 'none';
+            } else {
+                menu.classList.add('aberto');
+                overlay.style.display = 'block';
+            }
+        }
+
+
+        window.onload = function() {
+            var estaLogado = localStorage.getItem('esta_logado');
+            var dadosUsuario = localStorage.getItem('usuario_fisio');
+
+
+            if (estaLogado === 'sim' && dadosUsuario) {
+                var usuario = JSON.parse(dadosUsuario);
+                var primeiroNome = usuario.nome.split(' ')[0];
+
+
+                // Atualiza o menu superior
+                document.getElementById('menu-login').innerHTML = `
+                    <div class="user-area">
+                        <span>Olá, <strong>${primeiroNome}</strong></span>
+                        <span class="btn-sair" onclick="sairDaConta()">Sair</span>
+                    </div>
+                `;
+
+
+                // --- MODO ADMINISTRATIVO ---
+                document.getElementById('conteudo-publico').style.display = 'none';
+
+
+                document.getElementById('titulo-hero').innerText = "Área Restrita";
+                document.getElementById('subtitulo-hero').style.display = 'none';
+                document.getElementById('cta-container').style.display = 'none';
+                document.getElementById('hero-section').style.height = '200px';
+               
+                document.getElementById('painel-gestao').style.display = 'block';
+            }
+        };
+
+
+        function sairDaConta() {
+            if(confirm("Deseja realmente sair do sistema?")) {
+                localStorage.removeItem('esta_logado');
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

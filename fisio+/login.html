@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Fisio+</title>
+   
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="body-center">
+
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+               
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Logo Fisio+">
+                </a>
+
+
+                <h2>Bem-vindo de volta!</h2>
+                <p>Entre com seus dados salvos.</p>
+            </div>
+
+
+            <div id="form-login">
+                <div class="input-group">
+                    <label><i class="fa-solid fa-envelope"></i> E-mail</label>
+                    <input type="email" id="login-email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group">
+                    <label><i class="fa-solid fa-lock"></i> Senha</label>
+                    <input type="password" id="login-senha" placeholder="Sua senha">
+                </div>
+                <button type="button" class="btn-primary" onclick="fazerLogin()">
+                    <i class="fa-solid fa-right-to-bracket"></i> Entrar
+                </button>
+            </div>
+
+
+            <div class="auth-footer">
+                <p>Ainda não tem conta? <a href="index.html">Criar conta</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function fazerLogin() {
+            var emailDigitado = document.getElementById('login-email').value;
+            var senhaDigitada = document.getElementById('login-senha').value;
+
+
+            // 1. Busca os dados salvos no navegador (do cadastro feito no index.html)
+            var dadosSalvos = localStorage.getItem('usuario_fisio');
+
+
+            // 2. Verifica se existe algum cadastro
+            if (!dadosSalvos) {
+                alert("Nenhuma conta encontrada. Faça o cadastro primeiro!");
+                window.location.href = "index.html";
+                return;
+            }
+
+
+            // 3. Transforma o texto salvo de volta em objeto
+            var usuario = JSON.parse(dadosSalvos);
+
+
+            // 4. Compara o que foi digitado com o que está salvo
+            if (emailDigitado === usuario.email && senhaDigitada === usuario.senha) {
+                alert("Login realizado com sucesso! Bem-vindo(a) " + usuario.nome);
+               
+                // Marca que está logado para a telainicial.html reconhecer
+                localStorage.setItem('esta_logado', 'sim');
+               
+                window.location.href = "telainicial.html";
+            } else {
+                alert("E-mail ou senha incorretos.");
+            }
+        }
+    </script>
+
+
+</body>
+</html>

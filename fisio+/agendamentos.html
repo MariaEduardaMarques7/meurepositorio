@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos | Fisio+</title>
+   
+    <link rel="stylesheet" href="agendamento.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="menu-overlay" class="overlay" onclick="toggleSidebar()"></div>
+
+
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <a href="telainicial.html" class="logo-auth">
+                <img src="logor.png" alt="Fisio+">
+            </a>
+            <button class="sidebar-close-btn" onclick="toggleSidebar()">✕</button>
+        </div>
+       
+        <nav class="sidebar-menu">
+            <a href="telainicial.html"><i class="fa-solid fa-house"></i> Início</a>
+            <a href="cadastrocliente.html"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="cadastroprofissional.html"><i class="fa-solid fa-user-doctor"></i> Profissionais</a>
+            <a href="agendamentos.html" class="active"><i class="fa-solid fa-calendar-days"></i> Agendamentos</a>
+            <a href="checkin.html"><i class="fa-solid fa-circle-check"></i> Check-in</a>
+            <a href="prontuarios.html"><i class="fa-solid fa-file-medical"></i> Prontuários</a>
+            <a href="financeiro.html"><i class="fa-solid fa-money-bill-trend-up"></i> Financeiro</a>
+            <a href="relatorios.html"><i class="fa-solid fa-chart-pie"></i> Relatórios</a>
+            <a href="configuracoes.html"><i class="fa-solid fa-gear"></i> Configurações</a>
+            <a href="#" onclick="sairDaConta()" class="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</a>
+        </nav>
+    </aside>
+
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="left-header-group">
+                <div class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></div>
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Fisio+">
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container page-content">
+       
+        <section class="card form-card">
+            <h2><i class="fa-solid fa-calendar-plus"></i> Novo Agendamento</h2>
+            <p class="subtitle">Reserve um horário para o paciente.</p>
+           
+            <form>
+                <div class="form-group">
+                    <label>Paciente</label>
+                    <input type="text" placeholder="Digite o nome para buscar...">
+                </div>
+
+
+                <div class="form-group">
+                    <label>Profissional</label>
+                    <select>
+                        <option value="" disabled selected>Selecione o Fisioterapeuta</option>
+                        <option>Dra. Ana Paula (Pilates)</option>
+                        <option>Dr. Ricardo (Quiropraxia)</option>
+                        <option>Dra. Mariana (Motora)</option>
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Tipo de Sessão</label>
+                    <select>
+                        <option>Avaliação</option>
+                        <option>Retorno</option>
+                        <option>Sessão Avulsa</option>
+                        <option>Plano Mensal</option>
+                    </select>
+                </div>
+
+
+                <div class="grid-half">
+                    <div class="form-group">
+                        <label>Data</label>
+                        <input type="date">
+                    </div>
+                    <div class="form-group">
+                        <label>Horário</label>
+                        <input type="time">
+                    </div>
+                </div>
+
+
+                <button type="button" class="btn-primary" onclick="alert('Agendamento visualizado com sucesso!')">
+                    <i class="fa-solid fa-check"></i> Confirmar Horário
+                </button>
+            </form>
+        </section>
+
+
+    </main>
+
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var overlay = document.getElementById('menu-overlay');
+            sidebar.classList.toggle('aberto');
+           
+            if (sidebar.classList.contains('aberto')) {
+                overlay.style.display = 'block';
+            } else {
+                overlay.style.display = 'none';
+            }
+        }
+
+
+        function sairDaConta() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

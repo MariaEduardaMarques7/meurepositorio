@@ -1,0 +1,12 @@
+.logo-auth {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+.logo-auth img {
+    max-width: 180px; /* Define a largura máxima do logo */
+    height: auto;     /* Mantém a proporção correta */
+    display: inline-block;
+}

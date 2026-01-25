@@ -1,73 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Fisio+ | Clínica de Fisioterapia</title>
-<link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Fisio+</title>
+   
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 
-<!-- HEADER -->
-<header class="header">
-<div class="logo">Fisio<span>+</span></div>
-<nav>
-<a href="#home">Home</a>
-<a href="#clinica">Nossa Clínica</a>
-<a href="#servicos">Serviços</a>
-<a href="#contato">Contato</a>
-</nav>
-</header>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+               
+                <a href="telainicial.html" class="logo-auth">
+                    <img src="logor.png" alt="Logo Fisio+">
+                </a>
 
 
-<!-- HERO -->
-<section class="hero" id="home">
-<div class="hero-content">
-<h1>Cuidar do seu corpo é investir em qualidade de vida</h1>
-<p>Na Fisio+, unimos tecnologia, acolhimento e profissionais qualificados para cuidar de você.</p>
-<a href="#login" class="btn-hero">Agende conosco</a>
-</div>
-</section>
+                <h2>Crie sua conta</h2>
+                <p>Junte-se a nós para uma vida mais saudável.</p>
+            </div>
 
 
-<!-- NOSSA CLÍNICA -->
-<section class="section" id="clinica">
-<h2>Nossa Clínica</h2>
-<p class="texto">
-A Fisio+ nasceu com o propósito de oferecer um atendimento humanizado, focado no bem-estar,
-recuperação e prevenção de lesões. Trabalhamos com um ambiente moderno, acolhedor e preparado
-para atender cada paciente de forma individualizada.
-</p>
+            <div id="form-cadastro">
+                <div class="input-group">
+                    <label>Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Como quer ser chamado?">
+                </div>
+                <div class="input-group">
+                    <label>E-mail</label>
+                    <input type="email" id="email" placeholder="exemplo@email.com">
+                </div>
+                <div class="input-group">
+                    <label>Senha</label>
+                    <input type="password" id="senha" placeholder="Mínimo 6 caracteres">
+                </div>
+                <div class="input-group">
+                    <label>Confirmar Senha</label>
+                    <input type="password" id="confirma" placeholder="Repita sua senha">
+                </div>
+                <button type="button" class="btn-primary" onclick="salvarCadastro()">Cadastrar</button>
+            </div>
 
 
-<div class="grid">
-<img src="https://images.unsplash.com/photo-1580281657521-6f4d6a6c8c8f" alt="Clínica" />
-<img src="https://images.unsplash.com/photo-1576765607924-bbf7f06d88c3" alt="Atendimento" />
-<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07b" alt="Equipamentos" />
-</div>
-</section>
+            <div class="auth-footer">
+                <p>Já possui acesso? <a href="login.html">Fazer Login</a></p>
+            </div>
+        </div>
+    </div>
 
 
-<!-- SERVIÇOS -->
-<section class="section" id="servicos">
-<h2>Nossos Serviços</h2>
+    <script>
+        function salvarCadastro() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var senha = document.getElementById('senha').value;
+            var confirma = document.getElementById('confirma').value;
 
 
-<div class="grid">
-<div class="card">Fisioterapia Ortopédica</div>
-<div class="card">Fisioterapia Esportiva</div>
-<div class="card">Pilates Clínico</div>
-<div class="card">Reabilitação Pós-operatória</div>
-<div class="card">Fisioterapia Preventiva</div>
-<div class="card">Avaliação Funcional</div>
-</div>
-</section>
+            if(nome === "" || email === "" || senha === "") {
+                alert("Por favor, preencha todos os campos obrigatórios.");
+                return;
+            }
+            if (senha.length < 6) {
+                alert("Aumente sua segurança: a senha deve ter 6 caracteres ou mais.");
+                return;
+            }
+            if (senha !== confirma) {
+                alert("As senhas digitadas não são iguais.");
+                return;
+            }
 
 
-<!-- LOGIN / AGENDAMENTO -->
-<section class="login" id="login">
-<h1>Agendamento</h1>
+            // Objeto do usuário
+            var usuario = {
+                nome: nome,
+                email: email,
+                senha: senha
+            };
 
 
+            // Salvando no LocalStorage
+            localStorage.setItem('usuario_fisio', JSON.stringify(usuario));
+            localStorage.setItem('esta_logado', 'sim');
+
+
+            alert("Excelente! Sua conta foi criada com sucesso.");
+            window.location.href = "telainicial.html";
+        }
+    </script>
+
+
+</body>
 </html>
