@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisio+ | Saúde e Bem-estar</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   
+    <style>
+        :root {
+            --primary-color: #7d5fff;    
+            --primary-dark: #6741d9;    
+            --primary-light: #efebff;    
+            --text-color: #2d3436;
+            --bg-light: #f8f7ff;
+            --white: #ffffff;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        .container { max-width: 90%; margin: 0 auto; padding: 0 20px; }
+
+
+        /* Estilos do Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(125, 95, 255, 0.08);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; color: #4834d4; letter-spacing: -1px; }
+        .logo span { color: var(--primary-color); }
+        nav ul { display: flex; gap: 25px; align-items: center; }
+       
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(72, 52, 212, 0.6), rgba(45, 52, 54, 0.7)), url('https://images.unsplash.com/photo-1519824141121-b9767436dd4e?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            transition: 0.5s;
+        }
+        .hero-text { margin: 0 auto; max-width: 800px; }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+
+
+        /* Painel de Gestão - Estilo Moderno com Fundo Médico */
+        #painel-gestao {
+            display: none;
+            padding: 80px 0;
+            background: linear-gradient(rgba(248, 247, 255, 0.85), rgba(248, 247, 255, 0.95)),
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+
+        .painel-header { text-align: center; margin-bottom: 50px; }
+        .painel-header h2 { font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 10px; }
+
+
+        .painel-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        /* Cards do Painel */
+        .painel-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 40px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            height: 240px;
+        }
+
+
+        .painel-card:hover {
+            transform: translateY(-12px);
+            background: var(--white);
+            box-shadow: 0 20px 40px rgba(125, 95, 255, 0.15);
+            border-color: var(--primary-color);
+        }
+
+
+        /* Wrappers dos Ícones */
+        .painel-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+
+        .painel-card:hover .painel-icon-wrapper {
+            background: var(--primary-color);
+            transform: rotate(8deg);
+        }
+
+
+        .painel-icon {
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .painel-card:hover .painel-icon {
+            -webkit-text-fill-color: white;
+        }
+       
+        .painel-title { font-weight: 700; color: #444; font-size: 1.1rem; }
+
+
+        /* Rodapé */
+        footer { background-color: #1a1a2e; color: white; text-align: center; padding: 30px 0; margin-top: auto; }
+       
+        .user-area { display: flex; gap: 15px; align-items: center; background: var(--primary-light); padding: 5px 15px; border-radius: 50px; }
+        .btn-sair { color: #ff4757; font-weight: bold; cursor: pointer; border: 1.5px solid #ff4757; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; }
+
+
+        /* Responsividade */
+        @media (max-width: 1024px) { .painel-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .painel-grid { grid-template-columns: repeat(2, 1fr); .hero h1 { font-size: 2.2rem; } } }
+        @media (max-width: 480px) { .painel-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="container header-content">
+            <a href="telainicial.html" class="logo">Fisio<span>+</span></a>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="telainicial.html">Início</a></li>
+                    <li id="menu-login"><a href="login.html" class="btn-outline">Entrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="hero" id="hero-section">
+        <div class="container">
+            <div class="hero-text">
+                <h1 id="titulo-hero">Recupere seu movimento,<br>viva sem dor.</h1>
+                <p id="subtitulo-hero">Na Fisio+, conectamos você aos melhores fisioterapeutas com tecnologia e cuidado.</p>
+                <div id="cta-container" style="margin-top: 30px;">
+                    <a href="login.html" class="btn-outline" style="background:white">Agendar Consulta Agora</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="painel-gestao">
+        <div class="container">
+            <div class="painel-header">
+                <h2>Painel de Gestão</h2>
+                <p>O que você deseja gerenciar hoje?</p>
+            </div>
+           
+            <div class="painel-grid">
+                <a href="cadastrocliente.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-users painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Cadastrar Cliente</div>
+                </a>
+               
+                <a href="cadastroprofissional.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-user-doctor painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Cadastrar Profissional</div>
+                </a>
+
+
+                <a href="agendamentos.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-calendar-days painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Agendamentos</div>
+                </a>
+
+
+                <a href="checkin.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-check-to-slot painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Check-in</div>
+                </a>
+
+
+                <a href="prontuarios.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-file-medical painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Prontuários</div>
+                </a>
+
+
+                <a href="financeiro.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-money-bill-trend-up painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Financeiro</div>
+                </a>
+
+
+                <a href="relatorios.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-chart-pie painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Relatórios</div>
+                </a>
+
+
+                <a href="configuracoes.html" class="painel-card">
+                    <div class="painel-icon-wrapper">
+                        <i class="fa-solid fa-sliders painel-icon"></i>
+                    </div>
+                    <div class="painel-title">Configurações</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fisio+ | Sistema de Gestão em Fisioterapia.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        window.onload = function() {
+            var estaLogado = localStorage.getItem('esta_logado');
+            var dadosUsuario = localStorage.getItem('usuario_fisio');
+
+
+            if (estaLogado === 'sim' && dadosUsuario) {
+                var usuario = JSON.parse(dadosUsuario);
+                var primeiroNome = usuario.nome.split(' ')[0];
+
+
+                // Atualiza o menu superior
+                document.getElementById('menu-login').innerHTML = `
+                    <div class="user-area">
+                        <span>Olá, <strong>${primeiroNome}</strong></span>
+                        <span class="btn-sair" onclick="sairDaConta()">Sair</span>
+                    </div>
+                `;
+
+
+                // Altera o visual do Hero para modo Administrativo
+                document.getElementById('titulo-hero').innerText = "Painel de Controle";
+                document.getElementById('subtitulo-hero').innerText = "Bem-vindo de volta! Acesse abaixo suas ferramentas de gestão.";
+                document.getElementById('cta-container').style.display = 'none';
+                document.getElementById('hero-section').style.height = '250px';
+               
+                // Exibe o painel
+                document.getElementById('painel-gestao').style.display = 'block';
+            }
+        };
+
+
+        function sairDaConta() {
+            if(confirm("Deseja realmente sair do sistema?")) {
+                localStorage.removeItem('esta_logado');
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
